@@ -15,8 +15,8 @@ void freeChunk(Chunk* chunk){
   FREE_ARRAY(uint8_t, chunk->code, chunk->capacity);
   FREE_ARRAY(int, chunk->lines, chunk->capacity);
   freeValueArray(&chunk->constants);
-  /* Make sure the freed memory is in 
-   * a well-defined empty state */ 
+
+  /* A well-defined empty state */ 
   initChunk(chunk);
 }
 

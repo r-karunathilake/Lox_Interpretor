@@ -32,9 +32,11 @@ static void runtimeError(const char* format, ...){
 void initVM(){
   resetStack();
   vm.objects= NULL; // No 'Obj' allocated yet
+  initTable(&vm.strings);
 }
 
 void freeVM(){
+  freeTable(&vm.strings);
   freeObjects();
 }
 

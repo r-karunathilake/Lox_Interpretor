@@ -11,11 +11,12 @@ AS_CSTRING	object.h	14;"	d
 AS_NUMBER	value.h	36;"	d
 AS_OBJ	value.h	34;"	d
 AS_STRING	object.h	13;"	d
-BINARY_OP	vm.c	225;"	d	file:
-BINARY_OP	vm.c	86;"	d	file:
+BINARY_OP	vm.c	250;"	d	file:
+BINARY_OP	vm.c	88;"	d	file:
 BINPUT	main.c	10;"	d	file:
 BOOL_VAL	value.h	38;"	d
 Chunk	chunk.h	/^} Chunk;$/;"	t	typeref:struct:__anon3
+Compiler	compiler.c	/^}Compiler;$/;"	t	typeref:struct:__anon15	file:
 DEBUG_PRINT_CODE	common.h	9;"	d
 DEBUG_TRACE_EXECUTION	common.h	10;"	d
 Entry	table.h	/^}Entry;$/;"	t	typeref:struct:__anon9
@@ -32,6 +33,7 @@ IS_NUMBER	value.h	28;"	d
 IS_OBJ	value.h	29;"	d
 IS_STRING	object.h	11;"	d
 InterpretResult	vm.h	/^}InterpretResult;$/;"	t	typeref:enum:__anon8
+Local	compiler.c	/^}Local;$/;"	t	typeref:struct:__anon14	file:
 NIL_VAL	value.h	39;"	d
 NUMBER_VAL	value.h	40;"	d
 OBJ_STRING	object.h	/^  OBJ_STRING,$/;"	e	enum:__anon4
@@ -44,7 +46,10 @@ OP_DIVIDE	chunk.h	/^  OP_DIVIDE,$/;"	e	enum:__anon2
 OP_EQUAL	chunk.h	/^  OP_EQUAL,$/;"	e	enum:__anon2
 OP_FALSE	chunk.h	/^  OP_FALSE,$/;"	e	enum:__anon2
 OP_GET_GLOBAL	chunk.h	/^  OP_GET_GLOBAL,$/;"	e	enum:__anon2
+OP_GET_LOCAL	chunk.h	/^  OP_GET_LOCAL,$/;"	e	enum:__anon2
 OP_GREATER	chunk.h	/^  OP_GREATER,$/;"	e	enum:__anon2
+OP_JUMP	chunk.h	/^  OP_JUMP,$/;"	e	enum:__anon2
+OP_JUMP_IF_FALSE	chunk.h	/^  OP_JUMP_IF_FALSE,$/;"	e	enum:__anon2
 OP_LESS	chunk.h	/^  OP_LESS,$/;"	e	enum:__anon2
 OP_MULTIPLY	chunk.h	/^  OP_MULTIPLY,$/;"	e	enum:__anon2
 OP_NEGATE	chunk.h	/^  OP_NEGATE,$/;"	e	enum:__anon2
@@ -54,6 +59,7 @@ OP_POP	chunk.h	/^  OP_POP,$/;"	e	enum:__anon2
 OP_PRINT	chunk.h	/^  OP_PRINT,$/;"	e	enum:__anon2
 OP_RETURN	chunk.h	/^  OP_RETURN,$/;"	e	enum:__anon2
 OP_SET_GLOBAL	chunk.h	/^  OP_SET_GLOBAL,$/;"	e	enum:__anon2
+OP_SET_LOCAL	chunk.h	/^  OP_SET_LOCAL,$/;"	e	enum:__anon2
 OP_SUBTRACT	chunk.h	/^  OP_SUBTRACT,$/;"	e	enum:__anon2
 OP_TRUE	chunk.h	/^  OP_TRUE,$/;"	e	enum:__anon2
 Obj	object.h	/^struct Obj{$/;"	s
@@ -77,12 +83,14 @@ ParseFn	compiler.c	/^typedef void (*ParseFn)(bool canAssign);$/;"	t	file:
 ParseRule	compiler.c	/^}ParseRule;$/;"	t	typeref:struct:__anon13	file:
 Parser	compiler.c	/^}Parser;$/;"	t	typeref:struct:__anon11	file:
 Precedence	compiler.c	/^}Precedence;$/;"	t	typeref:enum:__anon12	file:
-READ_BYTE	vm.c	222;"	d	file:
+READ_BYTE	vm.c	246;"	d	file:
 READ_BYTE	vm.c	81;"	d	file:
-READ_CONSTANT	vm.c	223;"	d	file:
+READ_CONSTANT	vm.c	248;"	d	file:
 READ_CONSTANT	vm.c	82;"	d	file:
-READ_STRING	vm.c	224;"	d	file:
-READ_STRING	vm.c	83;"	d	file:
+READ_SHORT	vm.c	247;"	d	file:
+READ_SHORT	vm.c	84;"	d	file:
+READ_STRING	vm.c	249;"	d	file:
+READ_STRING	vm.c	85;"	d	file:
 STACK_MAX	vm.h	8;"	d
 Scanner	scanner.c	/^}Scanner; $/;"	t	typeref:struct:__anon1	file:
 TABLE_MAX_LOAD	table.c	10;"	d	file:
@@ -129,26 +137,31 @@ TOKEN_WHILE	scanner.h	/^  TOKEN_TRUE, TOKEN_VAR, TOKEN_WHILE,$/;"	e	enum:__anon5
 Table	table.h	/^}Table;$/;"	t	typeref:struct:__anon10
 Token	scanner.h	/^}Token;$/;"	t	typeref:struct:__anon6
 TokenType	scanner.h	/^}TokenType;$/;"	t	typeref:enum:__anon5
-VAL_BOOL	value.h	/^  VAL_BOOL,$/;"	e	enum:__anon14
-VAL_NIL	value.h	/^  VAL_NIL,$/;"	e	enum:__anon14
-VAL_NUMBER	value.h	/^  VAL_NUMBER,$/;"	e	enum:__anon14
-VAL_OBJ	value.h	/^  VAL_OBJ$/;"	e	enum:__anon14
+UINT8_COUNT	common.h	11;"	d
+VAL_BOOL	value.h	/^  VAL_BOOL,$/;"	e	enum:__anon16
+VAL_NIL	value.h	/^  VAL_NIL,$/;"	e	enum:__anon16
+VAL_NUMBER	value.h	/^  VAL_NUMBER,$/;"	e	enum:__anon16
+VAL_OBJ	value.h	/^  VAL_OBJ$/;"	e	enum:__anon16
 VM	vm.h	/^}VM;$/;"	t	typeref:struct:__anon7
-Value	value.h	/^} Value;$/;"	t	typeref:struct:__anon15
-ValueArray	value.h	/^}ValueArray;$/;"	t	typeref:struct:__anon17
-ValueType	value.h	/^}ValueType;$/;"	t	typeref:enum:__anon14
+Value	value.h	/^} Value;$/;"	t	typeref:struct:__anon17
+ValueArray	value.h	/^}ValueArray;$/;"	t	typeref:struct:__anon19
+ValueType	value.h	/^}ValueType;$/;"	t	typeref:enum:__anon16
 addConstant	chunk.c	/^int addConstant(Chunk* chunk, Value value){$/;"	f
+addLocal	compiler.c	/^static void addLocal(Token name){$/;"	f	file:
 adjustCapacity	table.c	/^static void adjustCapacity(Table* table, int capacity){$/;"	f	file:
 advance	compiler.c	/^static void advance(){$/;"	f	file:
 advance	scanner.c	/^static char advance(){$/;"	f	file:
 allocateObject	object.c	/^static Obj* allocateObject(size_t size, ObjType type){$/;"	f	file:
 allocateString	object.c	/^static ObjString* allocateString(char* chars, int length, uint32_t hash){$/;"	f	file:
-as	value.h	/^  } as;$/;"	m	struct:__anon15	typeref:union:__anon15::__anon16
+as	value.h	/^  } as;$/;"	m	struct:__anon17	typeref:union:__anon17::__anon18
+beginScope	compiler.c	/^static void beginScope(){$/;"	f	file:
 binary	compiler.c	/^static void binary(bool canAssign){$/;"	f	file:
-boolean	value.h	/^    bool boolean;$/;"	m	union:__anon15::__anon16
+block	compiler.c	/^static void block(){$/;"	f	file:
+boolean	value.h	/^    bool boolean;$/;"	m	union:__anon17::__anon18
+byteInstruction	debug.c	/^static int byteInstruction(const char* name, Chunk* chunk, int offset){$/;"	f	file:
 capacity	chunk.h	/^  int capacity; \/\/ Total number of entries $/;"	m	struct:__anon3
 capacity	table.h	/^  int capacity;$/;"	m	struct:__anon10
-capacity	value.h	/^  int capacity;$/;"	m	struct:__anon17
+capacity	value.h	/^  int capacity;$/;"	m	struct:__anon19
 chars	object.h	/^  char* chars; $/;"	m	struct:ObjString
 check	compiler.c	/^static bool check(TokenType type){$/;"	f	file:
 checkKeyword	scanner.c	/^static TokenType checkKeyword(int start, int length, $/;"	f	file:
@@ -173,19 +186,24 @@ consume	compiler.c	/^static void consume(TokenType type, const char* message){$/
 copyString	object.c	/^ObjString* copyString(const char* chars, int length){$/;"	f
 count	chunk.h	/^  int count;    \/\/ Number of allocated entries $/;"	m	struct:__anon3
 count	table.h	/^  int count;$/;"	m	struct:__anon10
-count	value.h	/^  int count;$/;"	m	struct:__anon17
+count	value.h	/^  int count;$/;"	m	struct:__anon19
 current	compiler.c	/^  Token current;$/;"	m	struct:__anon11	file:
+current	compiler.c	/^Compiler* current = NULL;$/;"	v
 current	scanner.c	/^  const char* current;$/;"	m	struct:__anon1	file:
 currentChunk	compiler.c	/^static Chunk* currentChunk(){$/;"	f	file:
 declaration	compiler.c	/^static void declaration(){$/;"	f	file:
+declareVariable	compiler.c	/^static void declareVariable(){$/;"	f	file:
 defineVariable	compiler.c	/^static void defineVariable(uint8_t global){$/;"	f	file:
+depth	compiler.c	/^  int depth;$/;"	m	struct:__anon14	file:
 disassembleChunk	debug.c	/^void disassembleChunk(Chunk* chunk, const char* name){$/;"	f
 disassembleInstruction	debug.c	/^int disassembleInstruction(Chunk* chunk, int offset){$/;"	f
 emitByte	compiler.c	/^static void emitByte(uint8_t byte){$/;"	f	file:
 emitBytes	compiler.c	/^static void emitBytes(uint8_t byte1, uint8_t byte2){$/;"	f	file:
 emitConstant	compiler.c	/^static void emitConstant(Value value){$/;"	f	file:
+emitJump	compiler.c	/^static int emitJump(uint8_t instruction){$/;"	f	file:
 emitReturn	compiler.c	/^static void emitReturn(){$/;"	f	file:
 endCompiler	compiler.c	/^static void endCompiler(){$/;"	f	file:
+endScope	compiler.c	/^static void endScope(){$/;"	f	file:
 entries	table.h	/^  Entry* entries; $/;"	m	struct:__anon10
 error	compiler.c	/^static void error(const char* message){$/;"	f	file:
 errorAt	compiler.c	/^static void errorAt(Token* token, const char* message){$/;"	f	file:
@@ -209,8 +227,11 @@ hashString	object.c	/^static uint32_t hashString(const char* key, int length){$/
 identifier	scanner.c	/^static Token identifier(){$/;"	f	file:
 identifierConstant	compiler.c	/^static uint8_t identifierConstant(Token* name){$/;"	f	file:
 identifierType	scanner.c	/^static TokenType identifierType(){$/;"	f	file:
+identifiersEqual	compiler.c	/^static bool identifiersEqual(Token* a, Token* b){$/;"	f	file:
+ifStatement	compiler.c	/^static void ifStatement(){$/;"	f	file:
 infix	compiler.c	/^  ParseFn infix;$/;"	m	struct:__anon13	file:
 initChunk	chunk.c	/^void initChunk(Chunk* chunk){$/;"	f
+initCompiler	compiler.c	/^static void initCompiler(Compiler* compiler){$/;"	f	file:
 initScanner	scanner.c	/^void initScanner(const char* source){$/;"	f
 initTable	table.c	/^void initTable(Table* table){$/;"	f
 initVM	vm.c	/^void initVM(){$/;"	f
@@ -229,23 +250,28 @@ line	scanner.c	/^  int line;$/;"	m	struct:__anon1	file:
 line	scanner.h	/^  int line;$/;"	m	struct:__anon6
 lines	chunk.h	/^  int* lines;   \/\/ Code line numbers$/;"	m	struct:__anon3
 literal	compiler.c	/^static void literal(bool canAssign){$/;"	f	file:
+localCount	compiler.c	/^  int localCount; \/\/ How many local variables are in scope$/;"	m	struct:__anon15	file:
+locals	compiler.c	/^  Local locals[UINT8_COUNT];$/;"	m	struct:__anon15	file:
 main	main.c	/^int main(int argc, const char* argv[]){$/;"	f
 makeConstant	compiler.c	/^static uint8_t makeConstant(Value value){$/;"	f	file:
 makeToken	scanner.c	/^static Token makeToken(TokenType type){$/;"	f	file:
+markInitialized	compiler.c	/^static void markInitialized(){$/;"	f	file:
 match	compiler.c	/^static bool match(TokenType type){$/;"	f	file:
 match	scanner.c	/^static bool match(char expected){$/;"	f	file:
+name	compiler.c	/^  Token name;$/;"	m	struct:__anon14	file:
 namedVariable	compiler.c	/^static void namedVariable(Token name, bool canAssign){$/;"	f	file:
 next	object.h	/^  struct Obj* next;$/;"	m	struct:Obj	typeref:struct:Obj::Obj
 number	compiler.c	/^static void number(bool canAssign){$/;"	f	file:
 number	scanner.c	/^static Token number(){$/;"	f	file:
-number	value.h	/^    double number;$/;"	m	union:__anon15::__anon16
+number	value.h	/^    double number;$/;"	m	union:__anon17::__anon18
 obj	object.h	/^  Obj obj;$/;"	m	struct:ObjString
-obj	value.h	/^    Obj* obj;$/;"	m	union:__anon15::__anon16
+obj	value.h	/^    Obj* obj;$/;"	m	union:__anon17::__anon18
 objects	vm.h	/^  Obj* objects;  \/\/ Linked list head to every 'Obj' created $/;"	m	struct:__anon7
 panicMode	compiler.c	/^  bool panicMode;$/;"	m	struct:__anon11	file:
 parsePrecedence	compiler.c	/^static void parsePrecedence(Precedence precedence){$/;"	f	file:
 parseVariable	compiler.c	/^static uint8_t parseVariable(const char* errorMessage){$/;"	f	file:
 parser	compiler.c	/^Parser parser;$/;"	v
+patchJump	compiler.c	/^static void patchJump(int offset){$/;"	f	file:
 peek	scanner.c	/^static char peek(){$/;"	f	file:
 peek	vm.c	/^static Value peek(int distance){$/;"	f	file:
 peekNext	scanner.c	/^static char peekNext(){$/;"	f	file:
@@ -261,12 +287,14 @@ readFile	main.c	/^static char* readFile(const char* path){$/;"	f	file:
 reallocate	memory.c	/^void* reallocate(void* pointer, size_t oldSize, size_t newSize){$/;"	f
 repl	main.c	/^static void repl(){$/;"	f	file:
 resetStack	vm.c	/^static void resetStack(){$/;"	f	file:
+resolveLocal	compiler.c	/^static int resolveLocal(Compiler* compiler, Token* name){$/;"	f	file:
 rules	compiler.c	/^ParseRule rules[] = {$/;"	v
 run	vm.c	/^static InterpretResult run(){$/;"	f	file:
 runFile	main.c	/^static void runFile(const char* path){$/;"	f	file:
 runtimeError	vm.c	/^static void runtimeError(const char* format, ...){$/;"	f	file:
 scanToken	scanner.c	/^Token scanToken(){$/;"	f
 scanner	scanner.c	/^Scanner scanner;$/;"	v
+scopeDepth	compiler.c	/^  int scopeDepth; \/\/ Number of blocks surrounding the current code $/;"	m	struct:__anon15	file:
 simpleInstruction	debug.c	/^static int simpleInstruction(const char* name, int offset){$/;"	f	file:
 skipWhitespace	scanner.c	/^static void skipWhitespace(){$/;"	f	file:
 stack	vm.h	/^  Value stack[STACK_MAX];$/;"	m	struct:__anon7
@@ -286,10 +314,10 @@ tableSet	table.c	/^bool tableSet(Table* table, ObjString* key, Value value){$/;"
 takeString	object.c	/^ObjString* takeString(char* chars, int length){$/;"	f
 type	object.h	/^  ObjType type;$/;"	m	struct:Obj
 type	scanner.h	/^  TokenType type;$/;"	m	struct:__anon6
-type	value.h	/^  ValueType type;$/;"	m	struct:__anon15
+type	value.h	/^  ValueType type;$/;"	m	struct:__anon17
 unary	compiler.c	/^static void unary(bool canAssign){$/;"	f	file:
 value	table.h	/^  Value value;$/;"	m	struct:__anon9
-values	value.h	/^  Value* values;$/;"	m	struct:__anon17
+values	value.h	/^  Value* values;$/;"	m	struct:__anon19
 valuesEqual	value.c	/^bool valuesEqual(Value a, Value b){$/;"	f
 varDeclaration	compiler.c	/^static void varDeclaration(){$/;"	f	file:
 variable	compiler.c	/^static void variable(bool canAssign){$/;"	f	file:
